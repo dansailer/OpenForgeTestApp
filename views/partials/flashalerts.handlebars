@@ -1,0 +1,70 @@
+<div id="alert-container">
+{{#if messages}}
+    {{#if messages.errors}}
+        <div class="alert alert-danger alert-dismissible animated fadeInRight" id="errors-flash" role="alert">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            {{#each messages.errors}}
+                {{#if msg}}
+                    <div>{{msg}}</div>
+                {{else}}
+                    {{#if message}}
+                        <div>{{message}}</div>
+                    {{else}}
+                        <div>{{this}}</div>
+                    {{/if}}
+                {{/if}}
+            {{/each}}
+        </div>
+    {{/if}}
+    {{#if messages.info}}
+        <div class="alert alert-info alert-dismissible animated fadeInRight" id="info-flash">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            {{#each messages.info}}
+                {{#if msg}}
+                    <div>{{msg}}</div>
+                {{else}}
+                    {{#if message}}
+                        <div>{{message}}</div>
+                    {{else}}
+                        <div>{{this}}</div>
+                    {{/if}}
+                {{/if}}
+            {{/each}}
+        </div>
+        {{#contentFor "pageScripts"}}
+            <script>
+                $(document).ready(function() {
+                    $("#info-flash").delay(5000).slideUp(800, function() {
+                        $(this).remove();
+                    });
+                });
+            </script>
+        {{/contentFor}}
+    {{/if}}
+    {{#if messages.success}}
+        <div class="alert alert-success alert-dismissible animated fadeInRight" id="success-flash">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            {{#each messages.success}}
+                {{#if msg}}
+                    <div>{{msg}}</div>
+                {{else}}
+                    {{#if message}}
+                        <div>{{message}}</div>
+                    {{else}}
+                        <div>{{this}}</div>
+                    {{/if}}
+                {{/if}}
+            {{/each}}
+        </div>
+        {{#contentFor "pageScripts"}}
+            <script>
+                $(document).ready(function() {
+                    $("#success-flash").delay(5000).slideUp(800, function() {
+                        $(this).remove();
+                    });
+                });
+            </script>
+        {{/contentFor}}
+    {{/if}}
+{{/if}}
+</div>

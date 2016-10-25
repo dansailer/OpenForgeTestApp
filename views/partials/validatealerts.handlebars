@@ -1,0 +1,11 @@
+{{#if validationErrors}}
+<div class="alert alert-warning" id="validation-error">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Warning!</strong> Please validate the following input values:
+    <ul>
+        {{#each validationErrors}}
+        <li>{{#if param}}<strong>{{ param }}</strong>: {{/if}}{{ msg }}</li>
+        {{/each}}
+    </ul>
+</div>
+{{/if}}

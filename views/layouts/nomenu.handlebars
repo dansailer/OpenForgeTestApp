@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{_csrf}}">
+    <title>AXA Media Platform</title>
+
+    <!-- CSS Files -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />   
+    <link href="/css/font-awesome.css" rel="stylesheet" />
+    <link href="/css/animate.min.css" rel="stylesheet" />
+     <link href="/css/stylesheet.css" rel="stylesheet" />
+    {{{block "pageStyleSheets"}}}
+</head>
+<body class="gray-bg">
+    <div id='#wrapper'>
+        {{{body}}}
+    </div>
+
+    <!-- Main scripts -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <!--<script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="/js/inspinia.js"></script>-->
+    {{{block "pageScripts"}}}
+</body>
+</html>

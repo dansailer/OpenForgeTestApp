@@ -1,0 +1,59 @@
+{{#contentFor "pageStyleSheets"}}
+<link href="/js/vegas/vegas.min.css" rel="stylesheet" />
+{{/contentFor}}
+
+<div class="animated fadeInDown" style="max-width:800px; padding:100px 20px 20px 20px; margin:0 auto;">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="panel panel-default" style="background: rgba(255, 255, 255, 0.92)!important;">
+                <div class="panel-body text-center" style="background:none !important;">
+                    <div>
+                        <h1 style="color:#e6e6e6; font-size:180px; font-weight:800; letter-spacing:-15px;">AXA</h1>
+                    </div>
+                    <h3>DigitalBooster CH OpenForge Test Application</h3>
+                </div>
+            </div>
+            {{> flashalerts}}
+            <div class="panel panel-default" style="background: rgba(255, 255, 255, 0.92)!important;">
+                <div class="panel-body " style="background:none !important;">
+                    <form role="form" action="/login" method="post">
+                        <input type="hidden" name="_csrf" value="{{_csrf}}">
+                        <legend>Login</legend>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <input type="text" name="username" class="form-control" placeholder="Username" autofocus required>
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                            <input type="password" name="password" class="form-control" placeholder="Password" autofocus required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">Login</button>
+                        </div>
+                        <div class="form-group text-center">
+                            <a href="/forgot">Forgot Password</a>&nbsp;|&nbsp;<a href="#">Support</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+{{#contentFor "pageScripts"}}
+    <script src="/js/vegas/vegas.min.js"></script>
+    <script>
+        //<!-- All background images are creative commons CC0 taken from https://www.pexels.com -->
+        $.get('/api/login/background/carousel', function(data) {
+            $(function() {
+                $('body').vegas({
+                    delay: 14000,
+                    timer: false,
+                    shuffle: true,
+                    slides: data
+                });
+            });
+        });
+    </script>
+{{/contentFor}}
