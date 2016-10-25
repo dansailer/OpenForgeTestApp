@@ -16,7 +16,7 @@ const path = require('path');
  * Create Express server and configuration.
  */
 const app = express();
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 8080);
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
